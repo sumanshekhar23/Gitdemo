@@ -2,7 +2,7 @@ name: deploy lambda function
 on: 
   push:
     branches:
-      - actions-demo
+      - master
       
 jobs:
   build:
