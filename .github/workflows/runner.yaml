@@ -1,10 +1,10 @@
 name: get runner
 on: 
-  push:
+ push:
     branches:
       - master
       - main
-  workflow_call:   
+ #workflow_call:   
 jobs:
 
   use_api:
