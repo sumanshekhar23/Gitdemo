@@ -1,0 +1,17 @@
+name: download artifcat
+on: 
+  push:
+    branches:
+      - master
+      - main
+jobs:
+  main: 
+    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
+
+  download:
+    runs-on: ubuntu-latest
+    steps:
+    - name: download the artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: zipped-bundle
