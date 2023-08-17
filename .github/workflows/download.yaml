@@ -5,8 +5,8 @@ on:
       - master
       - main
 jobs:
-  main: 
-    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
+#  main: 
+#    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
 
   download:
     runs-on: ubuntu-latest
@@ -19,4 +19,5 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: zipped-bundle
-        run: echo "download complete"
+    - name: run echo
+      run: echo "download complete"
