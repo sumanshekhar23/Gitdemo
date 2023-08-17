@@ -10,6 +10,7 @@ jobs:
 
   download:
     runs-on: ubuntu-latest
+    needs: main
     steps:
 #    - name: call resuable workflow
 #      uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
