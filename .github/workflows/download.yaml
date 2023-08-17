@@ -20,4 +20,4 @@ jobs:
       with:
         name: zipped-bundle
     - name: run echo
-      run: echo "download complecte"
+      run: echo "download complete"
