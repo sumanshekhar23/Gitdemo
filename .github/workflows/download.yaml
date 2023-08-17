@@ -9,7 +9,7 @@ jobs:
   main1: 
     uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
   main2:
-    uses: sumanshekhar23/Gitdemo/.github/workflows/runner.yaml@ractions-demo
+    uses: sumanshekhar23/Gitdemo/.github/workflows/runner.yaml@actions-demo
   download:
     runs-on: ubuntu-latest
     needs: main1
