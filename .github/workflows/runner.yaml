@@ -12,6 +12,8 @@ jobs:
     #  permissions: {}
       steps:
       - name: timepas
+        run: echo "starting job get runner"
+      - name: get runner
         run: |
            curl -L GET \
             -H "Accept: application/vnd.github+json" \
