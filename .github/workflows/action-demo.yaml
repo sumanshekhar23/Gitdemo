@@ -32,6 +32,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: zipped-bundle
-          run: echo "ho gaya"
+      - name: run echo
+        run: echo "ho gaya"
         
       
