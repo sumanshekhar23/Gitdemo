@@ -5,14 +5,14 @@ on:
       - master
       - main
 jobs:
-#  main: 
-#    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
+  main: 
+    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
 
   download:
     runs-on: ubuntu-latest
     steps:
-    - name: call resuable workflow
-      uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
+#    - name: call resuable workflow
+#      uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
     - name: checkout code
       uses: actions/checkout@v2
     - name: download the artifact
