@@ -4,7 +4,7 @@ on:
     branches:
       - master
       - main
-      - action-demo
+      - actions-demo
 jobs:
   main: 
     uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
