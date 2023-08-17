@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - actions-demo
-      
+  workflow_call:
 jobs:
   build:
     runs-on: ubuntu-latest
