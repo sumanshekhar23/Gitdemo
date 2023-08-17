@@ -1,6 +1,6 @@
 name: deploy lambda function
 on: 
-  push:
+  #push:
     #branches:
       #- actions-demo
   workflow_call:
