@@ -6,12 +6,13 @@ on:
       - main
       - actions-demo
 jobs:
-  main: 
+  main1: 
     uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
-
+  main2:
+    uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
   download:
     runs-on: ubuntu-latest
-    needs: main
+    needs: main1
     steps:
 #    - name: call resuable workflow
 #      uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
