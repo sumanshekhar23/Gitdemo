@@ -9,11 +9,13 @@ on:
 jobs:
 
     getOS:
-      runs-on: ubuntu-latest
+      runs-on: macos-latest
       steps:
-        - name: find os
+        - name: if windows
           if: runner.os == 'Windows'
           run: echo " os is $env:RUNNER_OS"
+        - name: if linux
+          run: echo " os is $RUNNER_OS"
         - name: else conditin
-          if: runner.os != 'Windows'
+          if: runner.os != ('Windows' $$ 'Linux') 
           run: echo " os is $RUNNER_OS"
