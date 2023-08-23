@@ -5,10 +5,7 @@ on:
       - action-demo
 
 jobs:
-  callos:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
-        with: 
-          os: ${{ RUNNER_OS }}
-    
+  callerr:
+    uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
+    with:
+      os: ubuntu-latest
