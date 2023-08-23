@@ -1,8 +1,8 @@
 name: list artifacts in repo
 on:
-  push:
-    branches:
-      - actions-demo
+#  push:
+#    branches:
+#      - actions-demo
 jobs:
   get-artifcat:
     runs-on: ubuntu-latest
