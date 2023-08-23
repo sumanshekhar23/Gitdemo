@@ -5,8 +5,7 @@ on:
       - action-demo
 
 jobs:
-  callerr:
-    name: run
+  main1:
     uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
     with:
-      os: ubuntu-18.04
+      os: ubuntu-latest
