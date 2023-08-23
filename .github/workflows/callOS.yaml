@@ -1,0 +1,14 @@
+name: call os
+on:
+  push:
+    branches:
+      - action-demo
+
+jobs:
+  callos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@os
+        with: 
+          os: ${{ RUNNER_OS }}
+    
