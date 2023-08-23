@@ -1,0 +1,15 @@
+name: find os
+
+on:
+  push:
+    branches: 
+      actions-demo
+  workflow_call:
+
+jobs:
+
+    getOS:
+      runs-on: ubuntu-latest
+      steps:
+        - name: find os
+          run: echo " os is $RUNNER_OS"
