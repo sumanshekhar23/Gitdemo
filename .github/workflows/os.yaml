@@ -1,9 +1,9 @@
 name: find os
 
 on:
-  push:
-    branches: 
-      actions-demo
+  #push:
+   # branches: 
+      #actions-demo
   workflow_call:
     inputs:
       os:
@@ -13,7 +13,7 @@ on:
 jobs:
 
     getOS:
-      runs-on: $os
+      runs-on: ${{ inputs.os }}
       steps:
         - name: if windows
           if: runner.os == 'Windows'
