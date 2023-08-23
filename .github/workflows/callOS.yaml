@@ -8,7 +8,7 @@ jobs:
   callos:
     runs-on: ubuntu-latest
     steps:
-      - uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@os
+      - uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
         with: 
           os: ${{ RUNNER_OS }}
     
