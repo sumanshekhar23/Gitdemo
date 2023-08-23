@@ -12,7 +12,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: find os
-          if: runner.os == windows
+          if: runner.os == 'windows'
           run: echo " os is $env:RUNNER_OS"
         - name: else conditin
           if: runner.os !== windows
