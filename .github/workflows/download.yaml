@@ -5,6 +5,7 @@ on:
    #   - master
    #   - main
    #   - actions-demo
+   workflow_call:
 jobs:
   main1: 
     uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
