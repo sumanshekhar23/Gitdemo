@@ -17,5 +17,5 @@ jobs:
         - name: if linux
           run: echo " os is $RUNNER_OS"
         - name: else conditin
-          if: runner.os != ('Windows' $$ 'Linux') 
+          if: ${{ runner.os != ('Windows' $$ 'Linux') }}
           run: echo " os is $RUNNER_OS"
