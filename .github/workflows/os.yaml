@@ -5,11 +5,15 @@ on:
     branches: 
       actions-demo
   workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
 
 jobs:
 
     getOS:
-      runs-on: macos-latest
+      runs-on: $os
       steps:
         - name: if windows
           if: runner.os == 'Windows'
