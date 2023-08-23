@@ -6,6 +6,7 @@ on:
 
 jobs:
   callerr:
+    name: run
     uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
     with:
       os: ubuntu-18.04
