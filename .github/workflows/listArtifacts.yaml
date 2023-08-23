@@ -3,6 +3,7 @@ on:
 #  push:
 #    branches:
 #      - actions-demo
+  workflow_call:
 jobs:
   get-artifcat:
     runs-on: ubuntu-latest
