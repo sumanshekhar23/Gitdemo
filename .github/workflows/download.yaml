@@ -1,10 +1,10 @@
 name: download artifcat
 on: 
-  push:
-    branches:
-      - master
-      - main
-      - actions-demo
+  #push:
+   # branches:
+   #   - master
+   #   - main
+   #   - actions-demo
 jobs:
   main1: 
     uses: sumanshekhar23/Gitdemo/.github/workflows/action-demo.yaml@actions-demo
