@@ -8,4 +8,4 @@ jobs:
   callerr:
     uses: sumanshekhar23/Gitdemo/.github/workflows/os.yaml@action-demo
     with:
-      os: ubuntu-latest
+      os: ubuntu-18.04
