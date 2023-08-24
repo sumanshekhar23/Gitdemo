@@ -21,3 +21,9 @@ jobs:
           -H "Authorization: Bearer $ghtoken" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/sumanshekhar23/Gitdemo/actions/runners
+  
+  outputs:
+    runs-on: ubuntu-latest
+    steps:
+     - name: sdf
+       run: echo "$(git rev-parse --short HEAD)"
