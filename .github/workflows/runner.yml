@@ -10,10 +10,9 @@ jobs:
   use_api:
     runs-on: ubuntu-latest
     steps:
-      - name: timepas
+
       - env:
            ghtoken: ${{ secrets.ss }}
-
 
         run: |
           curl -L GET \
