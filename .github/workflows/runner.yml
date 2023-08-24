@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - main
+      - sumanshekhar23-patch-1
  workflow_call:   
 jobs:
 
