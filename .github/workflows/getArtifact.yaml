@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
-          ghtoken: ${{ secrets.ghtoken }}
+          ghtoken: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -L \
           -H "Accept: application/vnd.github+json" \
