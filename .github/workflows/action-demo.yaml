@@ -43,5 +43,5 @@ jobs:
         run: echo "::set-output name=GITHUB_SHORT_SHA::$(git rev-parse --short HEAD)"
 
       - name: outut
-        run: echo "${{ GITHUB_SHORT_SHA }}"
+        run: echo "${{ outputs.GITHUB_SHORT_SHA }}"
          
