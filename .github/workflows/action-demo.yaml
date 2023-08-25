@@ -18,7 +18,7 @@ jobs:
         run: |
             cd function
             python -m pip install --upgrade pip
-            pip install -r requirements.txt -t .; fi
+            pip install -r requirements.txt -t .
       - name: create zip bundle
         run: |
             cd function
