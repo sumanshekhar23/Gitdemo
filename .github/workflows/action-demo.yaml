@@ -49,4 +49,4 @@ jobs:
         run: echo "{GITHUB_SHORT_SHA}={$(git rev-parse --short HEAD)}" >> $GITHUB_OUTPUT
 
       - name: outt  
-        run: echo "${{ $GITHUB_OUTPUT }}
+        run: echo " $GITHUB_OUTPUT"
