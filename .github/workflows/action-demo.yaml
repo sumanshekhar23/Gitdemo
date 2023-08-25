@@ -1,8 +1,8 @@
 name: deploy lambda function
 on: 
-  #push:
-    #branches:
-      #- actions-demo
+  push:
+    branches:
+      - actions-demo
   workflow_call:
 jobs:
   build:
@@ -28,6 +28,9 @@ jobs:
         with:
           name: zipped-bundle
           path: ${{ github.sha }}.zip
+       
+
+       
 #      - name: download artificat
 #        uses: actions/download-artifact@v3
 #        with:
@@ -35,4 +38,6 @@ jobs:
 #      - name: run echo
 #        run: echo "ho gaya"
         
-      
+       
+      - name: setoutput
+        run: echo "::set-output name=GITHUB_SHORT_SHA::$(git rev-parse --short HEAD)"
