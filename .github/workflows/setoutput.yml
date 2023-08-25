@@ -10,14 +10,17 @@ jobs:
       - name: checkout the code
         uses: actions/checkout@v3
       - name: cd
-        run: cd $GITHUB_WORKSPACE
+        run: |
+            cd $GITHUB_WORKSPACE
         
   setoutp:
     runs-on: ubuntu-latest
     steps:
     - name: setoutput
       id: vars
-      run: echo "::set-output name=GITHUB_SHORT_SHA::$(git rev-parse --short HEAD)"
+      run: |
+        cd $GITHUB_WORKSPACE
+        echo "::set-output name=GITHUB_SHORT_SHA::$(git rev-parse --short HEAD)"
 
     - name: outut
       run: echo "${{ steps.vars.outputs.GITHUB_SHORT_SHA }}"
