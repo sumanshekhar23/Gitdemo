@@ -52,3 +52,4 @@ jobs:
 
       - name: outt 
         run: echo " ${{ steps.vars2.outputs.GITHUB_SHORT_SHA }}"
+        
