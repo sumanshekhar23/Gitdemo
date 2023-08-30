@@ -8,4 +8,4 @@ jobs:
   main1:
     uses: sumanshekhar23/Gitdemo/.github/workflows/oss.yaml@action-demo
     with:
-      os: ubuntu-latest
+      os: windows-latest
