@@ -19,7 +19,7 @@ jobs:
       - run: npm install nodemailer --save
 
       - name: sendmail
-        uses: ./github/actions/sendemail
+        uses: ./.github/actions/sendemail
         with:
           smtp-server: smtp.gmail.com
           smtp-port: 465
