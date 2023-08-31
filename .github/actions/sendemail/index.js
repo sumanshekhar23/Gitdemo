@@ -8,7 +8,11 @@ async function run() {
 try {
   const transporter = nodemailer.createTransport({
     host: core.getInput('smtp-server') ,
-    port: core.getInput('smtp-port')
+    port: core.getInput('smtp-port'),
+    auth: {
+      user: "shekhar.siwan23@gmail.com",
+      pass: "sumanshekharsonu",
+    },
   });
 
   const mailOptions = {
