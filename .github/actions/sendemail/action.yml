@@ -1,0 +1,24 @@
+name: Send Email Action
+description: Custom actions for sending emails
+inputs:
+  smtp-server:
+    description: 'SMTP server for sending emails'
+    required: true
+  smtp-port:
+    description: 'SMTP port for SMTP server'
+    required: true
+  from:
+    description: 'Sender email address'
+    required: true
+  to:
+    description: 'Recepient email address'
+    required: true
+  subject:
+    description: 'Email subject'
+    required: ture
+  body:
+    description: 'Email body'
+    required: true
+  runs:
+    using: 'node16'
+    main: 'index.js'
