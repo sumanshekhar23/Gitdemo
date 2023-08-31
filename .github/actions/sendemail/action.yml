@@ -19,6 +19,6 @@ inputs:
   body:
     description: 'Email body'
     required: true
-  runs:
-    using: 'node16'
-    main: 'index.js'
+runs:
+  using: 'node16'
+  main: 'index.js'
