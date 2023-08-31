@@ -1,0 +1,28 @@
+name: email test
+on: workflow_dispatch
+jobs:
+  SendMail:
+    runs-on: Windows-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - run: npm install @actions/core
+      - run: npm install @actions/github
+      - run: npm install nodemailer --save
+
+      - name: sendmail
+        uses: ./github/actions/sendemail
+        with:
+          smtp-server: smtp.gmail.com
+          smtp-port: 465
+          from: suman23.shekhar@gmail.com
+          to: suman23.shekhar@gmail.com
+          subject: sab ho gaya
+          body: ye hai body
+        
+        
