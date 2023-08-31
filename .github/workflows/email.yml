@@ -1,5 +1,8 @@
 name: email test
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - sumanshekhar23-patch-1
 jobs:
   SendMail:
     runs-on: Windows-latest
