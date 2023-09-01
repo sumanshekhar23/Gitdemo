@@ -9,7 +9,7 @@ try {
   const transporter = nodemailer.createTransport({
     host: core.getInput('smtp-server') ,
     port: core.getInput('smtp-port'),
-    secure: ture, 
+    secure: true, 
     auth: {
       user: "shekhar.siwan23@gmail.com",
       pass: "mngtbbgneduztjdq",
