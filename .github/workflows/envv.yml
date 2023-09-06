@@ -1,5 +1,8 @@
 name: get env vair
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      actions-demo
 env:
   idd: 'suman'
 
