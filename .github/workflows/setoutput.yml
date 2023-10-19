@@ -1,8 +1,9 @@
 name: setoutput
 on:
-  push:
-    branches:
-      - actions-demo
+#  push:
+#    branches:
+#      - actions-demo
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
