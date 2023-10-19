@@ -1,6 +1,9 @@
 name: commit files generated
 
 on:
+  push:
+    branches:
+      action-demo
   workflow_dispatch:
 
 jobs:
