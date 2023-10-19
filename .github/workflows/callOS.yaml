@@ -1,9 +1,9 @@
 name: call os
 on:
-  push:
-    branches:
-      - action-demo
-
+#  push:
+#    branches:
+#      - action-demo
+  workflow_dispatch:
 jobs:
   main1:
     uses: sumanshekhar23/Gitdemo/.github/workflows/oss.yaml@action-demo
