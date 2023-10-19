@@ -4,6 +4,7 @@ on:
   #push:
    # branches: 
     #  actions-demo
+  workflow_dispatch:
   workflow_call:
     inputs:
       os:
