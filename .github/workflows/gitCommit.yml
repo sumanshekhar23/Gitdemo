@@ -1,0 +1,17 @@
+name: commit files generated
+
+on:
+  workflow_dispatch
+
+jobs:
+  CreateAndPush:
+    runs-on: ubuntu_latest
+    steps:
+      - name: checkout code
+        uses: action/checkout@v3
+      - name: create files
+        run: |
+            touch p.txt
+            git add .
+            git commit -m "generated via github actions"
+            git push --force
