@@ -1,7 +1,7 @@
 name: commit files generated
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   CreateAndPush:
