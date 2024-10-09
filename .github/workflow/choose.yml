@@ -1,4 +1,4 @@
-name: deploy lambda function
+name: choose
 on: 
   workflow-dispatch:
       
