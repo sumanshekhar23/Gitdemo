@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: sumanshekhar23/javascript-action@v1.1
+        uses: sumanshekhar23/javascript-action@v1.1.1
         with:
           who-to-greet: 'Shekhar'
       - name: Get the output time
