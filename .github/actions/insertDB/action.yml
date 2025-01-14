@@ -1,0 +1,30 @@
+name: Insert Data into PostgreSQL
+
+on:
+  workflow_dispatch:
+    inputs:
+      table_name:
+        description: "The table to insert data into"
+        required: true
+        default: "suman_schema.metrics"
+      data:
+        description: "Data to insert (JSON string)"
+        required: true
+        default: '{"name": "John Doe", "email": "john@example.com"}'
+
+jobs:
+  insert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Insert data into PostgreSQL
+        uses: ./action
+        with:
+          db_host: ${{ secrets.DB_HOST }}
+          db_user: ${{ secrets.DB_USER }}
+          db_password: ${{ secrets.DB_PASSWORD }}
+          db_name: ${{ secrets.DB_NAME }}
+          table_name: ${{ inputs.table_name }}
+          data: ${{ inputs.data }}
