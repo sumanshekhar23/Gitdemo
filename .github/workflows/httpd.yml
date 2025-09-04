@@ -15,11 +15,14 @@ jobs:
           ref: 2.4.65   # set the release tag or branch you want
 
       - name: Download APR
-        run: |
-          curl -LO https://downloads.apache.org/apr/apr-1.7.4.zip
-          tar -xf apr-1.7.4.zip
-          move apr-1.7.4 srclib\apr
+        run: curl -L -o apr-1.7.4.tar.gz https://downloads.apache.org/apr/apr-1.7.4.tar.gz
 
+      - name: Extract APR
+        run: tar -xzf apr-1.7.4.tar.gz
+
+      - name: Move APR
+        run: move apr-1.7.4 srclib\apr
+        shell: pwsh
       - name: Download APR-util
         run: |
           curl -LO https://downloads.apache.org/apr/apr-util-1.6.3.zip
