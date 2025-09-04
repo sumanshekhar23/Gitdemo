@@ -1,0 +1,62 @@
+name: Build Apache HTTPD (Windows)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout httpd source
+        uses: actions/checkout@v4
+        with:
+          repository: apache/httpd
+          ref: 2.4.65   # set the release tag or branch you want
+
+      - name: Download APR
+        run: |
+          curl -LO https://downloads.apache.org/apr/apr-1.7.4.zip
+          tar -xf apr-1.7.4.zip
+          move apr-1.7.4 srclib\apr
+
+      - name: Download APR-util
+        run: |
+          curl -LO https://downloads.apache.org/apr/apr-util-1.6.3.zip
+          tar -xf apr-util-1.6.3.zip
+          move apr-util-1.6.3 srclib\apr-util
+
+      - name: Download PCRE2
+        run: |
+          curl -LO https://github.com/PhilipHazel/pcre2/releases/download/pcre2-10.44/pcre2-10.44.zip
+          tar -xf pcre2-10.44.zip
+          move pcre2-10.44 srclib\pcre2
+
+      - name: Setup Perl (Strawberry Perl)
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.32'
+
+      - name: Setup NASM (for OpenSSL, optional)
+        uses: ilammy/setup-nasm@v1
+
+      - name: Setup CMake
+        uses: jwlawson/actions-setup-cmake@v2
+
+      - name: Generate build files
+        run: |
+          perl srclib\apr\build\lineends.pl
+          perl build\lineends.pl
+          perl srclib\apr\build\buildconf.pl
+
+          cmake -G "Visual Studio 17 2022" .
+
+      - name: Build httpd with MSBuild
+        run: |
+          msbuild INSTALL.vcxproj /p:Configuration=Release
+
+      - name: Archive build
+        uses: actions/upload-artifact@v4
+        with:
+          name: apache-httpd-windows
+          path: C:\Apache24
