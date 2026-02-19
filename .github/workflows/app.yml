@@ -1,0 +1,21 @@
+on: workflow_dispatch
+
+jobs:
+  use_github_app_token:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate a GitHub App token
+        id: generate-token
+        uses: actions/create-github-app-token@v2 # Use a specific version tag
+        with:
+          app-id: 2902817
+          private-key: ${{ secrets.APP_PRIVATE_KEY_PEM }}
+          # The installation-id is automatically determined if not provided, 
+          # provided the app is installed on the repo where the workflow runs.
+
+      - name: Use the token to make an API request
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: |
+          # Example: List repository issues using the gh CLI with the generated token
+          gh api repos/${{ github.repository }}/issues
