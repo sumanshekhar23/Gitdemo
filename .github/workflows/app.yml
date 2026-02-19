@@ -17,5 +17,5 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
-          # Example: List repository issues using the gh CLI with the generated token
-          gh api repos/${{ github.repository }}/issues
+          curl -H "Authorization: token $GH_TOKEN" \
+          https://api.github.com/repos/sumanshekhar23/Gitdemo/pulls/1
