@@ -10,8 +10,17 @@ jobs:
         with:
           app-id: 2902817
           private-key: ${{ secrets.APP_PRIVATE_KEY_PEM }}
-          # The installation-id is automatically determined if not provided, 
-          # provided the app is installed on the repo where the workflow runs.
+          owner: ${{ github.repository_owner }}
+          repositories: |
+            skills-hello-github-actions
+
+      - name: Checkout different repo
+        uses: actions/checkout@v6
+        with:
+          repository: 'sumanshekhar23/skills-hello-github-actions'
+          token: ${{ steps.generate-token.outputs.token }}
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
 
       - name: Use the token to make an API request
         env:
