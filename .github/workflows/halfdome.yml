@@ -17,3 +17,9 @@ jobs:
         
       - name: run python script
         run: python halfdome.py
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: Half_Dome_Hike_Invitation
+          path: ./Half_Dome_Hike_Invitation.pdf
