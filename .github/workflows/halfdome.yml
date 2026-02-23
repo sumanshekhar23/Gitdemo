@@ -1,0 +1,18 @@
+name: choose
+on: 
+  workflow_dispatch:
+      
+jobs:
+  choose:
+    runs-on: ubuntu-latest #self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
+      - name: install dependencies
+        run: pip install reportlab
+        
+      - name: run python script
+        run: python halfdome.py
